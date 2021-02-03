@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"com.cleotroph.asciicanvas","l":"ASCIICanvas"},{"p":"com.cleotroph.asciicanvas","l":"ASCIICanvasManager"},{"p":"com.cleotroph.asciicanvas","l":"Game"},{"p":"com.cleotroph.asciicanvas","l":"ASCIICanvasManager.PreLauncher"},{"p":"com.cleotroph.asciicanvas","l":"ASCIICanvasManager.ScreenBuffer"}]
