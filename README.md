@@ -9,7 +9,7 @@ Built using only default java libs (AWT + Swing).
 Free for unlicensed use.
 
 
-<a href="https://jitpack.io/#Cleotroph/ASCIICanvas/main-SNAPSHOT">How to add ASCII Canvas to a maven project</a>
+[How to add ASCII Canvas to a maven project](https://jitpack.io/#Cleotroph/ASCIICanvas/main-SNAPSHOT)
 
 
-<a href="https://javadoc.jitpack.io/com/github/Cleotroph/ASCIICanvas/main-SNAPSHOT/javadoc/index.html">Documentation</a>
+[Documentation](https://javadoc.jitpack.io/com/github/Cleotroph/ASCIICanvas/main-SNAPSHOT/javadoc/index.html)
