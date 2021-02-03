@@ -1,0 +1,27 @@
+cmd.exe
+/X
+/C
+""C:\Program Files\AdoptOpenJDK\jdk-11.0.10.9-hotspot\bin\javadoc.exe" @options @packages"
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\allclasses-index.html = 1612335637787
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\allclasses.html = 1612335637851
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\allpackages-index.html = 1612335637810
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\constant-values.html = 1612335637524
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\deprecated-list.html = 1612335637832
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\element-list = 1612335637472
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\help-doc.html = 1612335637872
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\index-all.html = 1612335637766
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\index.html = 1612335637859
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\javadoc.bat = 1612335524522
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\member-search-index.js = 1612335637756
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\member-search-index.zip = 1612335637758
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\options = 1612335636045
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\overview-tree.html = 1612335637713
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\package-search-index.js = 1612335637740
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\package-search-index.zip = 1612335637743
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\packages = 1612335636045
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\script.js = 1612335637900
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\search.js = 1612335637903
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\serialized-form.html = 1612335637550
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\stylesheet.css = 1612335637891
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\type-search-index.js = 1612335637750
+C:\Users\Max Cerasoli\Desktop\repos\ASCIICanvas\ASCIICanvas\target\apidocs\type-search-index.zip = 1612335637751

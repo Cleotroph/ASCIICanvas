@@ -189,7 +189,7 @@ public class ASCIICanvas implements Runnable {
      * @param h height of rect.
      */
     public void drawPerimieter(int x, int y, int w, int h){
-        brush = '?';
+        brush = '═';
         for(int ix = 1; ix < w - 1; ix++){
             int pos = x + ix + y * cwidth;
             chars[pos] = brush;
@@ -198,7 +198,7 @@ public class ASCIICanvas implements Runnable {
             chars[pos] = brush;
             colors[pos] = color;
         }
-        brush = '?';
+        brush = '║';
         for(int iy = 1; iy < h - 1; iy++){
             int pos = x + (iy + y) * cwidth;
             chars[pos] = brush;
@@ -207,19 +207,19 @@ public class ASCIICanvas implements Runnable {
             chars[pos] = brush;
             colors[pos] = color;
         }
-        brush = '?';
+        brush = '╔';
         int pos = x + y * cwidth;
         chars[pos] = brush;
         colors[pos] = color;
-        brush = '?';
+        brush = '╝';
         pos = (x + w - 1) + (y + h - 1) * cwidth;
         chars[pos] = brush;
         colors[pos] = color;
-        brush = '?';
+        brush = '╚';
         pos = x + (y + h - 1) * cwidth;
         chars[pos] = brush;
         colors[pos] = color;
-        brush = '?';
+        brush = '╗';
         pos = (x + w - 1) + y * cwidth;
         chars[pos] = brush;
         colors[pos] = color;
