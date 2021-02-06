@@ -13,7 +13,7 @@ public class PreLauncher {
     private int[] widths = {1920, 1280, 2560};
     private int[] heights = {1080, 720, 1440};
     private int[] sizes = {20, 14, 28};
-    boolean fullScreen;
+    boolean fullScreen = true;
     private int resMode = 0;
     private volatile boolean open = true;
     public PreLauncher(String name){
