@@ -16,7 +16,7 @@ public class PreLauncher {
     boolean fullScreen;
     private int resMode = 0;
     private volatile boolean open = true;
-    public PreLauncher(Frame frame, Canvas component, String name){
+    public PreLauncher(String name){
         cx = 96;
         cy = 54;
         JFrame prelauncher = new JFrame(name);
@@ -56,9 +56,6 @@ public class PreLauncher {
         width = widths[resMode];
         height = heights[resMode];
         size = sizes[resMode];
-
-        frame = new Frame(name);
-        frame.setBackground(new Color(0));
     }
 
     /**

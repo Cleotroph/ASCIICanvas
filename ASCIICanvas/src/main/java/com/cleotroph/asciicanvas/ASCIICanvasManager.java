@@ -5,13 +5,13 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferStrategy;
 
-public class ASCIICanvasManagerNEW extends Canvas {
+public class ASCIICanvasManager extends Canvas {
 
     private int width, height;
     ScreenBuffer screenBuffer;
-    private ASCIICanvasNEW parent;
+    private ASCIICanvas parent;
 
-    public ASCIICanvasManagerNEW(int x, int y, int cx, int cy, int size, ASCIICanvasNEW parent, Frame frame){
+    public ASCIICanvasManager(int x, int y, int cx, int cy, int size, ASCIICanvas parent, Frame frame){
         this.parent = parent;
         width = x;
         height = y;
@@ -83,9 +83,9 @@ public class ASCIICanvasManagerNEW extends Canvas {
         // width of characters
         private int padding;
 
-        private ASCIICanvasManagerNEW cManager;
+        private ASCIICanvasManager cManager;
 
-        public ScreenBuffer(int x, int y, int cSize, ASCIICanvasManagerNEW cManager) {
+        public ScreenBuffer(int x, int y, int cSize, ASCIICanvasManager cManager) {
             this.cManager = cManager;
             if (monoFont == null) {
                 padding = cSize;
