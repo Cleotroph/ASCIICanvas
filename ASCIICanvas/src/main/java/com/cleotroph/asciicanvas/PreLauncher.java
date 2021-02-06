@@ -3,12 +3,16 @@ package com.cleotroph.asciicanvas;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Class to be initialized and passed in when launching in custom resolutions. Initializes with default settings. config
+ * lengths must match.
+ */
 public class PreLauncher {
     int width, height, size;
     int cx, cy;
-    int[] widths = {1920, 1280, 2560};
-    int[] heights = {1080, 720, 1440};
-    int[] sizes = {20, 14, 28};
+    private int[] widths = {1920, 1280, 2560};
+    private int[] heights = {1080, 720, 1440};
+    private int[] sizes = {20, 14, 28};
     boolean fullScreen;
     private int resMode = 0;
     private volatile boolean open = true;
@@ -57,22 +61,43 @@ public class PreLauncher {
         frame.setBackground(new Color(0));
     }
 
+    /**
+     * Set character width of canvas
+     * @param cx width
+     */
     public void setCx(int cx) {
         this.cx = cx;
     }
 
+    /**
+     * Set character height of canvas
+     * @param cy height
+     */
     public void setCy(int cy) {
         this.cy = cy;
     }
 
+    /**
+     * Set character size options (correlate to resolution)
+     * Should be equal to width / cx or rendering will not fill screen horizontally
+     * @param sizes options of sizes
+     */
     public void setSizes(int[] sizes) {
         this.sizes = sizes;
     }
 
+    /**
+     * set pixel height options.
+     * @param heights options for heights
+     */
     public void setHeights(int[] heights) {
         this.heights = heights;
     }
 
+    /**
+     * set pixel width options.
+     * @param widths options for widths
+     */
     public void setWidths(int[] widths) {
         this.widths = widths;
     }
