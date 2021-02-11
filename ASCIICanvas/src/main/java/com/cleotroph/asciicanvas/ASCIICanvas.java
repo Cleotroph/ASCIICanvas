@@ -222,14 +222,12 @@ public abstract class ASCIICanvas implements KeyListener {
         if(vertical){
             for(int iy = 0; iy < l;  iy++){
                 int pos = x + (y + iy) * width;
-                chars[pos] = brush;
-                colors[pos] = color;
+                drawChar(pos);
             }
         }else{
             for(int ix = 0; ix < l;  ix++){
                 int pos = (x + ix) + y * width;
-                chars[pos] = brush;
-                colors[pos] = color;
+                drawChar(pos);
             }
         }
     }
@@ -247,26 +245,21 @@ public abstract class ASCIICanvas implements KeyListener {
             for(int iy = 0; iy < h; iy++){
                 for(int ix = 0; ix < w; ix++){
                     int pos = ix + (iy + y) * width + x;
-                    chars[pos] = brush;
-                    colors[pos] = color;
+                    drawChar(pos);
                 }
             }
         }else{
             for(int ix = 0; ix < w; ix++){
                 int pos = x + ix + y * width;
-                chars[pos] = brush;
-                colors[pos] = color;
+                drawChar(pos);
                 pos = x + ix + (y + (h - 1)) * width;
-                chars[pos] = brush;
-                colors[pos] = color;
+                drawChar(pos);
             }
             for(int iy = 1; iy < h - 1; iy++){
                 int pos = x + (iy + y) * width;
-                chars[pos] = brush;
-                colors[pos] = color;
+                drawChar(pos);
                 pos = x + (w - 1) + (iy + y) * width;
-                chars[pos] = brush;
-                colors[pos] = color;
+                drawChar(pos);
             }
         }
     }
@@ -278,6 +271,14 @@ public abstract class ASCIICanvas implements KeyListener {
      */
     public void point(int x, int y){
         int pos = x + y * width;
+        drawChar(pos);
+    }
+
+    /**
+     * draws char with current brush and color
+     * @param pos position on the canvas
+     */
+    private void drawChar(int pos){
         chars[pos] = brush;
         colors[pos] = color;
     }
@@ -293,37 +294,29 @@ public abstract class ASCIICanvas implements KeyListener {
         brush = '═';
         for(int ix = 1; ix < w - 1; ix++){
             int pos = x + ix + y * width;
-            chars[pos] = brush;
-            colors[pos] = color;
+            drawChar(pos);
             pos = x + ix + (y + (h - 1)) * width;
-            chars[pos] = brush;
-            colors[pos] = color;
+            drawChar(pos);
         }
         brush = '║';
         for(int iy = 1; iy < h - 1; iy++){
             int pos = x + (iy + y) * width;
-            chars[pos] = brush;
-            colors[pos] = color;
+            drawChar(pos);
             pos = x + (w - 1) + (iy + y) * width;
-            chars[pos] = brush;
-            colors[pos] = color;
+            drawChar(pos);
         }
         brush = '╔';
         int pos = x + y * width;
-        chars[pos] = brush;
-        colors[pos] = color;
+        drawChar(pos);
         brush = '╝';
         pos = (x + w - 1) + (y + h - 1) * width;
-        chars[pos] = brush;
-        colors[pos] = color;
+        drawChar(pos);
         brush = '╚';
         pos = x + (y + h - 1) * width;
-        chars[pos] = brush;
-        colors[pos] = color;
+        drawChar(pos);
         brush = '╗';
         pos = (x + w - 1) + y * width;
-        chars[pos] = brush;
-        colors[pos] = color;
+        drawChar(pos);
     }
 
     //--------------------------- Sequencing ------------------------------
