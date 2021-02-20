@@ -220,14 +220,16 @@ public abstract class ASCIICanvas implements KeyListener {
      */
     public void line(int x, int y, int l, boolean vertical){
         if(vertical){
-            for(int iy = 0; iy < l;  iy++){
+            int effectiveL = Math.max(0, (y + l) - height);
+            for(int iy = Math.max(0, 0 - y); iy < effectiveL;  iy++){
                 int pos = x + (y + iy) * width;
-                drawChar(pos);
+                point(pos);
             }
         }else{
-            for(int ix = 0; ix < l;  ix++){
+            int effectiveL = Math.max(0, (x + l) - width);
+            for(int ix = Math.max(0, 0 - x); ix < effectiveL;  ix++){
                 int pos = (x + ix) + y * width;
-                drawChar(pos);
+                point(pos);
             }
         }
     }
@@ -242,25 +244,19 @@ public abstract class ASCIICanvas implements KeyListener {
      */
     public void rect(int x, int y, int w, int h, boolean filled){
         if(filled){
-            for(int iy = 0; iy < h; iy++){
-                for(int ix = 0; ix < w; ix++){
+            int effectiveH = Math.max(0, (y + h) - height);
+            int effectiveW = Math.max(0, (x + w) - width);
+            for(int iy = Math.max(0, 0 - y); iy < effectiveH; iy++){
+                for(int ix = Math.max(0, 0 - x); ix < effectiveW; ix++){
                     int pos = ix + (iy + y) * width + x;
-                    drawChar(pos);
+                    point(pos);
                 }
             }
         }else{
-            for(int ix = 0; ix < w; ix++){
-                int pos = x + ix + y * width;
-                drawChar(pos);
-                pos = x + ix + (y + (h - 1)) * width;
-                drawChar(pos);
-            }
-            for(int iy = 1; iy < h - 1; iy++){
-                int pos = x + (iy + y) * width;
-                drawChar(pos);
-                pos = x + (w - 1) + (iy + y) * width;
-                drawChar(pos);
-            }
+            line(x, y, w, false);
+            line(x, y, h, true);
+            line(x, y + (h - 1), w, false);
+            line(x + (w - 1), y, h, true);
         }
     }
 
@@ -271,14 +267,16 @@ public abstract class ASCIICanvas implements KeyListener {
      */
     public void point(int x, int y){
         int pos = x + y * width;
-        drawChar(pos);
+        if(x < width && x >= 0 && y < height && y >= 0) {
+            point(pos);
+        }
     }
 
     /**
-     * draws char with current brush and color
-     * @param pos position on the canvas
+     * Paints a single point with the brush settings using buffer position.
+     * @param pos Position in the buffer.
      */
-    private void drawChar(int pos){
+    private void point(int pos){
         chars[pos] = brush;
         colors[pos] = color;
     }
@@ -290,33 +288,24 @@ public abstract class ASCIICanvas implements KeyListener {
      * @param w width of rect.
      * @param h height of rect.
      */
-    public void drawPerimieter(int x, int y, int w, int h){
+    public void drawPerimeter(int x, int y, int w, int h){
+        // boolean logic to confirm points are in bounds of the canvas
+        char brushMemory = brush;
         brush = '═';
-        for(int ix = 1; ix < w - 1; ix++){
-            int pos = x + ix + y * width;
-            drawChar(pos);
-            pos = x + ix + (y + (h - 1)) * width;
-            drawChar(pos);
-        }
+        line(x, y, w, false);
+        line(x, y + (h - 1), w, false);
         brush = '║';
-        for(int iy = 1; iy < h - 1; iy++){
-            int pos = x + (iy + y) * width;
-            drawChar(pos);
-            pos = x + (w - 1) + (iy + y) * width;
-            drawChar(pos);
-        }
-        brush = '╔';
-        int pos = x + y * width;
-        drawChar(pos);
-        brush = '╝';
-        pos = (x + w - 1) + (y + h - 1) * width;
-        drawChar(pos);
-        brush = '╚';
-        pos = x + (y + h - 1) * width;
-        drawChar(pos);
+        line(x, y, h, true);
+        line(x + (w - 1), y, h, true);
         brush = '╗';
-        pos = (x + w - 1) + y * width;
-        drawChar(pos);
+        point(x + w - 1, y);
+        brush = '╝';
+        point(x + w - 1, y + h - 1);
+        brush = '╔';
+        point(x, y);
+        brush = '╚';
+        point(x, y + h - 1);
+        brush = brushMemory;
     }
 
     //--------------------------- Sequencing ------------------------------
