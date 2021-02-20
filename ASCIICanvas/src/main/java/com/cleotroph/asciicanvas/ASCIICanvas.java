@@ -220,13 +220,13 @@ public abstract class ASCIICanvas implements KeyListener {
      */
     public void line(int x, int y, int l, boolean vertical){
         if(vertical){
-            int effectiveL = Math.max(0, (y + l) - height);
+            int effectiveL = Math.max(0, l - ((y + l) - height));
             for(int iy = Math.max(0, 0 - y); iy < effectiveL;  iy++){
                 int pos = x + (y + iy) * width;
                 point(pos);
             }
         }else{
-            int effectiveL = Math.max(0, (x + l) - width);
+            int effectiveL = Math.max(0, l - ((x + l) - width));
             for(int ix = Math.max(0, 0 - x); ix < effectiveL;  ix++){
                 int pos = (x + ix) + y * width;
                 point(pos);
@@ -244,8 +244,8 @@ public abstract class ASCIICanvas implements KeyListener {
      */
     public void rect(int x, int y, int w, int h, boolean filled){
         if(filled){
-            int effectiveH = Math.max(0, (y + h) - height);
-            int effectiveW = Math.max(0, (x + w) - width);
+            int effectiveH = Math.max(0, h - ((y + h) - height));
+            int effectiveW = Math.max(0, w - ((x + w) - width));
             for(int iy = Math.max(0, 0 - y); iy < effectiveH; iy++){
                 for(int ix = Math.max(0, 0 - x); ix < effectiveW; ix++){
                     int pos = ix + (iy + y) * width + x;
