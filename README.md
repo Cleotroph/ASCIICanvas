@@ -1,4 +1,4 @@
-## ASCII Canvas
+# ASCII Canvas
 
 Cleotroph - 03/02/2021
 
@@ -8,11 +8,11 @@ Built using only default java libs (AWT + Swing).
 
 Free for unlicensed use.
 
-## How to include the library
+# How to include the library
 
 [How to add ASCII Canvas to a project using maven or gradle](https://jitpack.io/#Cleotroph/ASCIICanvas/main-SNAPSHOT)
 
-## How to use the library
+# How to use the library
 
 The first thing you'll want to do is set up your canvas class, which can be done by extending ASCIICanvas and adding implementations to the abstract methods.
 
@@ -84,24 +84,24 @@ public class ExampleProject extends ASCIICanvas{
 ```
 Now your project is ready to go, and you can start calling render functions from the draw function. It is recommeneded that you avoid draw calls outside of the render function as this could cause desynchronization issues. The tick function should be used for periodic logic updates. This separation will keep the draw loop running smoothly and independently of game logic.
 
-## Reference
+# Reference
 
-# clear()
+## clear()
 This function clears the screen and should be called at the begining of every frame. If you don't call this every frame, you need to call syncBuffer() instead, though this is not recommeneded as this could cause screen tearing
 
-# frameRate(int rate)
+## frameRate(int rate)
 This function sets the frame rate of the canvas to `rate` fps.
 
-# tickRate(int rate)
+## tickRate(int rate)
 This function sets the tick rate of the canvas to `rate` tps.
 
-# start()
+## start()
 This function is called to start the canvas drawing and ticking.
 
-# exit()
+## exit()
 This function can be called to stop the canvas and the program.
 
-# setColor(int color)
+## setColor(int color)
 This function sets the color for subsequent draw calls. The color is specified as the index in the internal colors array. The default color array is defined as follows
 ```java
 {
@@ -125,22 +125,22 @@ This function sets the color for subsequent draw calls. The color is specified a
 ```
 Color map support will be added in an upcoming version.
 
-# setBrush(char brush)
+## setBrush(char brush)
 This sets the character which will be used for subsequent draw functions.
 
-# line(int x, int y, int l, boolean vertical)
+## line(int x, int y, int l, boolean vertical)
 This draws a line using the brush + color, starting at (x, y) and extending l characters either down or to the right (in positive x and y).
 
-# rect(int x, int y, int w, int h, boolean filled)
+## rect(int x, int y, int w, int h, boolean filled)
 This draws a rectangle either filled or unfilled at (x, y) and extending to (x + w, y + h).
 
-# point(int x, int y)
+## point(int x, int y)
 This draws the brush at (x, y)
 
-# drawPerimiter(int x, int y, int w, int h)
+## drawPerimiter(int x, int y, int w, int h)
 This draws an unfilled rectange like rect(), but uses the ASCII double like characters (such as '║') to generate a boarder.
 
-## More info
+# More info
 
 - A custom preloader can be added using the preloader class in the documentation. This will be added to the reference at some point in the future. 
 
