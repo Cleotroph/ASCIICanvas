@@ -138,7 +138,7 @@ This draws a rectangle either filled or unfilled at (x, y) and extending to (x +
 This draws the brush at (x, y)
 
 ## drawPerimiter(int x, int y, int w, int h)
-This draws an unfilled rectange like rect(), but uses the ASCII double like characters (such as '║') to generate a border.
+This draws an unfilled rectange like rect(), but uses the ASCII double line characters (such as '║') to generate a border.
 
 # More info
 
